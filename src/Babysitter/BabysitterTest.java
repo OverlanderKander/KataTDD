@@ -11,5 +11,10 @@ public class BabysitterTest {
 		BabysitterPayment payment = new BabysitterPayment();
 		assertEquals("This test FAILS", 16, payment.babysittingTotalPay(17, 18, 20));
 	}
-
+	
+	@Test
+	public void startAt5pmEndAt7pmReturns32() {
+		BabysitterPayment payment = new BabysitterPayment();
+		assertEquals("This test FAILS", 32, payment.babysittingTotalPay(17, 19, 20));
+	}
 }
