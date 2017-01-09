@@ -27,5 +27,6 @@ public class BabysitterPayment {
 		}
 
 		return paymentAmount;
+
 	}
 }
