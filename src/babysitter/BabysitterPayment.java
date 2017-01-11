@@ -1,4 +1,4 @@
-package Babysitter;
+package babysitter;
 
 public class BabysitterPayment {
 

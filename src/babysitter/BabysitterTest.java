@@ -1,4 +1,4 @@
-package Babysitter;
+package babysitter;
 
 import static org.junit.Assert.*;
 
