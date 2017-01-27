@@ -1,4 +1,4 @@
-package babysitter;
+package com.kander.katatdd;
 
 import static org.junit.Assert.*;
 
@@ -30,5 +30,10 @@ public class BabysitterTest {
 	@Test
 	public void startAt5pmBedtimeAt8pmEndAt4amReturns132() {
 		assertEquals("This test FAILS", 132, payment.babysittingTotalPay(17, 4, 20));
-	}	
+	}
+	
+	@Test
+	public void startAt8pmBedtimeAt10pmEndAt2amReturns72() {
+		assertEquals("This test FAILS", 72, payment.babysittingTotalPay(20, 2, 22));
+	}
 }

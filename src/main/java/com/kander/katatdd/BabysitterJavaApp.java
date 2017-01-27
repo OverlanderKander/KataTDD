@@ -1,4 +1,4 @@
-package babysitter;
+package com.kander.katatdd;
 
 import java.time.LocalTime;
 import java.util.Scanner;

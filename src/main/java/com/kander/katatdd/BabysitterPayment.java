@@ -1,4 +1,4 @@
-package babysitter;
+package com.kander.katatdd;
 
 public class BabysitterPayment {
 
