@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +14,7 @@
 	<h2>Hourly Rates:</h2>
 	<table>
 		<tr>
-			<td>Arrival - Bedtime:</td>
+			<td>Start Time - Bedtime:</td>
 			<td>$12</td>
 		</tr>
 		<tr>
@@ -24,6 +26,30 @@
 			<td>$16</td>
 		</tr>
 	</table>
+
+	<form>
+		<select id="startTime" name="startTime">
+			<option selected disabled>Start Time</option>
+			<c:forEach items="${possibleTimes}" var="hour">
+				<option value="${hour}">${hour}</option>
+			</c:forEach>
+		</select> 
+
+		<select id="endTime" name="endTime">
+			<option selected disabled>End Time</option>
+			<c:forEach items="${possibleTimes}" var="hour">
+				<option value="${hour}">${hour}</option>
+			</c:forEach>
+		</select>
+		
+		<select id="bedtime" name="bedtime">
+			<option selected disabled>Bedtime</option>
+			<c:forEach items="${possibleTimes}" var="hour">
+				<option value="${hour}">${hour}</option>
+			</c:forEach>		
+		</select>
+	</form>
+
 
 </body>
 </html>
