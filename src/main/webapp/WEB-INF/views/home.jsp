@@ -27,7 +27,7 @@
 		</tr>
 	</table>
 
-	<form>
+	<form name="calculatorInput" action="showMeTheMoney" method="POST">
 		<select id="startTime" name="startTime">
 			<option selected disabled>Start Time</option>
 			<c:forEach items="${possibleTimes}" var="hour">
@@ -48,8 +48,12 @@
 				<option value="${hour}">${hour}</option>
 			</c:forEach>		
 		</select>
+		
+		<input type="submit" value="Calculate">
+
 	</form>
 
+<p>${jobAmount}</p>
 
 </body>
 </html>
