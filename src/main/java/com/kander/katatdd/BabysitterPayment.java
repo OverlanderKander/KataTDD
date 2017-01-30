@@ -12,15 +12,25 @@ public class BabysitterPayment {
 		if (endTime <= 4) {
 			endTime += 24;
 		}
+		
+		if (bedtime <= 4) {
+			bedtime += 24;
+		}
 			
 		if (bedtime > endTime) {
-			paymentAmount += (endTime - startTime) * rate1;
+			paymentAmount += (24 - startTime) * rate1;
+			paymentAmount += (endTime - 24) * rate1;
 
-		} else if (endTime <= 23) {
+		} else if (endTime <= 24) {
 			paymentAmount += (bedtime - startTime) * rate1;
 			paymentAmount += (endTime - bedtime) * rate2;
 
-		} else {
+		} else if (bedtime >= 24) {
+			paymentAmount += (24 - startTime) * rate1;
+			paymentAmount += (endTime - 24) * rate3;
+		}
+
+		else {
 			paymentAmount += (bedtime - startTime) * rate1;
 			paymentAmount += (24 - bedtime) * rate2;  
 			paymentAmount += (endTime - 24) * rate3; 

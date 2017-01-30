@@ -53,7 +53,9 @@
 
 	</form>
 
-<p>${jobAmount}</p>
+	<p>${jobDetails}
+	<br>${jobAmount}
+	</p>
 
 </body>
 </html>

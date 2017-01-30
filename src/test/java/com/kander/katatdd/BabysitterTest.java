@@ -36,4 +36,20 @@ public class BabysitterTest {
 	public void startAt8pmBedtimeAt10pmEndAt2amReturns72() {
 		assertEquals("This test FAILS", 72, payment.babysittingTotalPay(20, 2, 22));
 	}
+	
+	@Test
+	public void ifBedtimeIsAfterMidnightSkipRate2StartAt9pmBedAt2amEndAt3amReturn84() {
+		assertEquals("This test FAILS", 84, payment.babysittingTotalPay(21, 3, 2));
+	}
+	
+	@Test
+	public void bedtimeAfterMidnightTest2StartAt5pmBedAt1amEndAt4amReturn148() {
+		assertEquals("This test FAILS", 148, payment.babysittingTotalPay(17, 4, 1));
+	}
+	
+	@Test
+	public void bedtimeAtMidnightStartAt8pmBedAt12amEndAt4amReturn112() {
+		assertEquals("This test FAILS", 112, payment.babysittingTotalPay(20, 4, 0));
+	}
+
 }
