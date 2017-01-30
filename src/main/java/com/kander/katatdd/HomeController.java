@@ -16,17 +16,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 
-	
+	DateTimeFormatter formatAmPm = DateTimeFormatter.ofPattern("h:mm a");
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model, HttpServletRequest request) {
 		
-		ArrayList<LocalTime> arrayListOfTimes = new ArrayList<LocalTime>();
-		DateTimeFormatter formatHourMinuteAmPm = DateTimeFormatter.ofPattern("hh:mm a");
+		ArrayList<String> arrayListOfTimes = new ArrayList<String>();
 		LocalTime lt = LocalTime.of(17, 00);
-		lt.format(formatHourMinuteAmPm);
+	
 		for (int i = 1; i <= 12; i++) {
-			arrayListOfTimes.add(lt);
+			arrayListOfTimes.add(lt.format(formatAmPm));
 			lt = lt.plusHours(1);
 		}
 		model.addAttribute("possibleTimes", arrayListOfTimes);
@@ -36,9 +35,9 @@ public class HomeController {
 	
 	@RequestMapping(value = "/showMeTheMoney", method = RequestMethod.POST)
 	public String showMeTheMoney(Model model, HttpServletRequest request) {
-		LocalTime startTimeSelected = LocalTime.parse(request.getParameter("startTime"));
-		LocalTime endTimeSelected = LocalTime.parse(request.getParameter("endTime"));
-		LocalTime bedTimeSelected = LocalTime.parse(request.getParameter("bedtime"));
+		LocalTime startTimeSelected = LocalTime.parse(request.getParameter("startTime"), formatAmPm);
+		LocalTime endTimeSelected = LocalTime.parse(request.getParameter("endTime"), formatAmPm);
+		LocalTime bedTimeSelected = LocalTime.parse(request.getParameter("bedtime"), formatAmPm);
 
 		int start = startTimeSelected.getHour();
 		int end = endTimeSelected.getHour();
