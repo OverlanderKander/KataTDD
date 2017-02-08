@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,28 +34,22 @@
 			<c:forEach items="${possibleTimes}" var="hour">
 				<option value="${hour}">${hour}</option>
 			</c:forEach>
-		</select> 
-
-		<select id="endTime" name="endTime">
+		</select> <select id="endTime" name="endTime">
 			<option selected disabled>End Time</option>
 			<c:forEach items="${possibleTimes}" var="hour">
 				<option value="${hour}">${hour}</option>
 			</c:forEach>
-		</select>
-		
-		<select id="bedtime" name="bedtime">
+		</select> <select id="bedtime" name="bedtime">
 			<option selected disabled>Bedtime</option>
 			<c:forEach items="${possibleTimes}" var="hour">
 				<option value="${hour}">${hour}</option>
-			</c:forEach>		
-		</select>
-		
-		<input type="submit" value="Calculate">
+			</c:forEach>
+		</select> <input type="submit" value="Calculate">
 
 	</form>
 
 	<p>${jobDetails}
-	<br>${jobAmount}
+		<br>${jobAmount}
 	</p>
 
 </body>
