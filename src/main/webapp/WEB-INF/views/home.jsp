@@ -63,14 +63,14 @@
 			</c:forEach>
 		</select> <select id="endTime" name="endTime">
 			<option selected disabled>End Time</option>
-			<c:forEach items="${possibleTimes}" var="hour">
+<%-- 			<c:forEach items="${possibleTimes}" var="hour">
 				<option value="${hour}">${hour}</option>
-			</c:forEach>
+			</c:forEach> --%>
 		</select> <select id="bedtime" name="bedtime">
 			<option selected disabled>Bedtime</option>
-			<c:forEach items="${possibleTimes}" var="hour">
+<%-- 			<c:forEach items="${possibleTimes}" var="hour">
 				<option value="${hour}">${hour}</option>
-			</c:forEach>
+			</c:forEach> --%>
 		</select> <input type="submit" value="Calculate">
 
 	</form>
