@@ -16,6 +16,15 @@ public class ListOfTimes {
 			lt = lt.plusHours(1);
 		}
 	}
+	
+	public ArrayList<String> getAllTimes() {
+		ArrayList<String> timesToReturn = new ArrayList<>();
+		for (int i = 0; i < allTheTimes.size(); i++) {
+			String addThisTime = allTheTimes.get(i).format(formatAmPm);
+			timesToReturn.add(addThisTime);
+		}
+		return timesToReturn;
+	}
 
 	public ArrayList<String> getTimesThroughEndOfArray(int start) {
 		ArrayList<String> timesToReturn = new ArrayList<>();
@@ -25,5 +34,4 @@ public class ListOfTimes {
 		}
 		return timesToReturn;
 	}
-
 }
