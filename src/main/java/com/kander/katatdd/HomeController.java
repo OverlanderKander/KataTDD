@@ -25,9 +25,6 @@ public class HomeController {
 		String startTimeSelected = request.getParameter("startTime");
 		String endTimeSelected = request.getParameter("endTime");
 		String bedtimeSelected = request.getParameter("bedtime");
-		System.out.println("the current start is " + startTimeSelected);
-		System.out.println("the current end is " + endTimeSelected);
-		System.out.println("the current bed is " + bedtimeSelected);
 
 		if (bedtimeSelected != null) {
 			System.out.println("the current bedtime is " + bedtimeSelected);

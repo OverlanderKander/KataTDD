@@ -76,14 +76,8 @@
 			</c:forEach>
 		</select> <select id="endTime" name="endTime">
 			<option value="">End Time</option>
-			<%-- 			<c:forEach items="${possibleTimes}" var="hour">
-				<option value="${hour}">${hour}</option>
-			</c:forEach> --%>
 		</select> <select id="bedtime" name="bedtime" onchange="this.form.submit()">
-			<option value=null>Bedtime</option>
-			<%-- 			<c:forEach items="${possibleTimes}" var="hour">
-				<option value="${hour}">${hour}</option>
-			</c:forEach> --%>
+			<option value="">Bedtime</option>
 		</select> 
 	</form>
 
