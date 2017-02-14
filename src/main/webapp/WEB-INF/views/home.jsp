@@ -18,6 +18,7 @@
             startOption : start
         		}, function(response) {
         			$("#endTime").find('option:gt(0)').remove();
+        			$("#bedtime").find('option:gt(0)').remove();
           		$.each(response, function(index, value) {
           			$('<option>').val(value).text(value).appendTo($("#endTime"));
       			});
