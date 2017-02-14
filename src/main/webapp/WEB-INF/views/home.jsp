@@ -85,8 +85,6 @@
 				<option value="${hour}">${hour}</option>
 			</c:forEach> --%>
 		</select> 
-		<input type="submit" value="Calculate">
-
 	</form>
 
 	<p>${jobDetails}</p>

@@ -46,27 +46,4 @@ public class HomeController {
 		}
 		return "home";
 	}
-
-	@RequestMapping(value = "/showMeTheMoney", method = RequestMethod.POST)
-	public String showMeTheMoney(Model model, HttpServletRequest request) {
-
-		String startTimeSelected = request.getParameter("startTime");
-		String endTimeSelected = request.getParameter("endTime");
-		String bedtimeSelected = request.getParameter("bedtime");
-
-		int start = LocalTime.parse(startTimeSelected, formatAmPm).getHour();
-		int end = LocalTime.parse(endTimeSelected, formatAmPm).getHour();
-		int bed = LocalTime.parse(bedtimeSelected, formatAmPm).getHour();
-
-		BabysitterPayment paymentCalculator = new BabysitterPayment();
-		String jobDetails = "Start time: " + startTimeSelected + ". End time: " + endTimeSelected + ". Bedtime: "
-				+ bedtimeSelected;
-		String jobAmount = "Total payment for this job: $" + paymentCalculator.babysittingTotalPay(start, end, bed)
-				+ ".00";
-
-		model.addAttribute("jobDetails", jobDetails);
-		model.addAttribute("jobAmount", jobAmount);
-
-		return "home";
-	}
 }
