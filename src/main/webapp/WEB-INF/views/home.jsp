@@ -14,13 +14,32 @@
 	$(document).ready(function() {
 		$("#startTime").change(function(event) {
 			var start = $("select#startTime").val();
-			$.get("JsonServlet", {
+			$.get("EndServlet", {
             startOption : start
         		}, function(response) {
-
         			$("#endTime").find('option:gt(0)').remove();
           		$.each(response, function(index, value) {
           			$('<option>').val(value).text(value).appendTo($("#endTime"));
+      			});
+        		});
+    		});
+	});
+
+</script>
+
+<script>
+	$(document).ready(function() {
+		$("#endTime").change(function(event) {
+			var start = $("select#startTime").val();
+			var end = $("select#endTime").val();
+			$.get("BedServlet", {
+	        startOption : start,			
+            endOption : end
+        		}, function(response) {
+
+        			$("#bedtime").find('option:gt(0)').remove();
+          		$.each(response, function(index, value) {
+          			$('<option>').val(value).text(value).appendTo($("#bedtime"));
       			});
         		});
     		});
@@ -50,7 +69,7 @@
 	</table>
 
 	<form name="calculatorInput" action="showMeTheMoney" method="POST">
-		<select id="startTime" name="startTime">
+		<select id="startTime" name="startTime" method="POST">
 			<option selected disabled>Start Time</option>
 			<c:forEach items="${possibleTimes}" var="hour">
 				<option value="${hour}">${hour}</option>

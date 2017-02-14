@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
-public class JsonServlet extends HttpServlet {
+public class EndServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -16,12 +16,20 @@ public class JsonServlet extends HttpServlet {
 	ArrayList<String> allTimeOptions = times.getAllTimes();
 		
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String startTimeSelected = request.getParameter("startOption"); 
+		String startTimeSelected = request.getParameter("startOption");
+		System.out.println("endStart: " + startTimeSelected);
 		int selectedStart = allTimeOptions.indexOf(startTimeSelected);
 		List<String> endList = times.getTimesThroughEndOfArray(selectedStart);
-		String jsonEndOpions = null;
-		jsonEndOpions = new Gson().toJson(endList);
+		String jsonEndOptions = null;
+		jsonEndOptions = new Gson().toJson(endList);
 		response.setContentType("application/json");
-		response.getWriter().write(jsonEndOpions);
+		response.getWriter().write(jsonEndOptions);
 	}
 }
+
+
+
+
+
+
+

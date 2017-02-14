@@ -34,4 +34,13 @@ public class ListOfTimes {
 		}
 		return timesToReturn;
 	}
+	
+	public ArrayList<String> getTimesFromStartToEnd(int start, int end) {
+		ArrayList<String> timesToReturn = new ArrayList<>();
+		for (int i = start; i <= end; i++) {
+			String addThisTime = allTheTimes.get(i).format(formatAmPm);
+			timesToReturn.add(addThisTime);
+		}
+		return timesToReturn;
+	}
 }
