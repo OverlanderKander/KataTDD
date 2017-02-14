@@ -13,6 +13,7 @@
 <script>
 	$(document).ready(function() {
 		$("#startTime").change(function(event) {
+			var showResults = true;
 			var start = $("select#startTime").val();
 			$.get("EndServlet", {
             startOption : start
@@ -44,7 +45,6 @@
         		});
     		});
 	});
-
 </script>
 
 </head>
@@ -68,8 +68,8 @@
 		</tr>
 	</table>
 
-	<form name="calculatorInput" action="showMeTheMoney" method="POST">
-		<select id="startTime" name="startTime" method="POST">
+	<form name="calculatorInput" action="home" method="GET">
+		<select id="startTime" name="startTime">
 			<option value="">Start Time</option>
 			<c:forEach items="${possibleTimes}" var="hour">
 				<option value="${hour}">${hour}</option>
@@ -79,18 +79,18 @@
 			<%-- 			<c:forEach items="${possibleTimes}" var="hour">
 				<option value="${hour}">${hour}</option>
 			</c:forEach> --%>
-		</select> <select id="bedtime" name="bedtime">
-			<option value="">Bedtime</option>
+		</select> <select id="bedtime" name="bedtime" onchange="this.form.submit()">
+			<option value=null>Bedtime</option>
 			<%-- 			<c:forEach items="${possibleTimes}" var="hour">
 				<option value="${hour}">${hour}</option>
 			</c:forEach> --%>
-		</select> <input type="submit" value="Calculate">
+		</select> 
+		<input type="submit" value="Calculate">
 
 	</form>
 
-	<p>${jobDetails}
-		<br>${jobAmount}
-	</p>
-
+	<p>${jobDetails}</p>
+	<p>${jobAmount}</p>	
+	
 </body>
 </html>

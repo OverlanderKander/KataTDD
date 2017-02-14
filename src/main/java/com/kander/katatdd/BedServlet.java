@@ -9,13 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 public class BedServlet extends HttpServlet {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	ListOfTimes times = new ListOfTimes();
 	ArrayList<String> allTimeOptions = times.getAllTimes();
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String startTimeSelected = request.getParameter("startOption");
 		System.out.println("bedStart: " + startTimeSelected);
 		String endTimeSelected = request.getParameter("endOption");
@@ -29,6 +30,3 @@ public class BedServlet extends HttpServlet {
 		response.getWriter().write(jsonBedOptions);
 	}
 }
-
-
-

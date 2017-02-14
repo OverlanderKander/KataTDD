@@ -26,10 +26,3 @@ public class EndServlet extends HttpServlet {
 		response.getWriter().write(jsonEndOptions);
 	}
 }
-
-
-
-
-
-
-
