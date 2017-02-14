@@ -37,7 +37,6 @@
 	        startOption : start,			
             endOption : end
         		}, function(response) {
-
         			$("#bedtime").find('option:gt(0)').remove();
           		$.each(response, function(index, value) {
           			$('<option>').val(value).text(value).appendTo($("#bedtime"));
@@ -71,17 +70,17 @@
 
 	<form name="calculatorInput" action="showMeTheMoney" method="POST">
 		<select id="startTime" name="startTime" method="POST">
-			<option selected disabled>Start Time</option>
+			<option value="">Start Time</option>
 			<c:forEach items="${possibleTimes}" var="hour">
 				<option value="${hour}">${hour}</option>
 			</c:forEach>
 		</select> <select id="endTime" name="endTime">
-			<option selected disabled>End Time</option>
+			<option value="">End Time</option>
 			<%-- 			<c:forEach items="${possibleTimes}" var="hour">
 				<option value="${hour}">${hour}</option>
 			</c:forEach> --%>
 		</select> <select id="bedtime" name="bedtime">
-			<option selected disabled>Bedtime</option>
+			<option value="">Bedtime</option>
 			<%-- 			<c:forEach items="${possibleTimes}" var="hour">
 				<option value="${hour}">${hour}</option>
 			</c:forEach> --%>
