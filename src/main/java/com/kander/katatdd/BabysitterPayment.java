@@ -4,7 +4,7 @@ public class BabysitterPayment {
 
 	int paymentAmount = 0;
 	int rate1 = 12;
-	int rate2 = 8; 
+	int rate2 = 8;
 	int rate3 = 16;
 
 	public int babysittingTotalPay(int startTime, int endTime, int bedtime) {
@@ -12,11 +12,11 @@ public class BabysitterPayment {
 		if (endTime <= 4) {
 			endTime += 24;
 		}
-		
+
 		if (bedtime <= 4) {
 			bedtime += 24;
 		}
-			
+
 		if (bedtime > endTime) {
 			paymentAmount += (24 - startTime) * rate1;
 			paymentAmount += (endTime - 24) * rate1;
@@ -32,11 +32,10 @@ public class BabysitterPayment {
 
 		else {
 			paymentAmount += (bedtime - startTime) * rate1;
-			paymentAmount += (24 - bedtime) * rate2;  
-			paymentAmount += (endTime - 24) * rate3; 
+			paymentAmount += (24 - bedtime) * rate2;
+			paymentAmount += (endTime - 24) * rate3;
 		}
 
 		return paymentAmount;
-
 	}
 }

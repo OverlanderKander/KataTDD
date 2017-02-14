@@ -17,10 +17,9 @@ public class BedServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		String startTimeSelected = request.getParameter("startOption");
-		System.out.println("bedStart: " + startTimeSelected);
 		String endTimeSelected = request.getParameter("endOption");
-		System.out.println("bedEnd: " + endTimeSelected);
 		int selectedStart = allTimeOptions.indexOf(startTimeSelected);
 		int selectedEnd = allTimeOptions.indexOf(endTimeSelected);
 		List<String> bedList = times.getTimesFromStartToEnd(selectedStart, selectedEnd);

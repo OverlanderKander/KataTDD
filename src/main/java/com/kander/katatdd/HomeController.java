@@ -27,16 +27,13 @@ public class HomeController {
 		String bedtimeSelected = request.getParameter("bedtime");
 
 		if (bedtimeSelected != null) {
-			System.out.println("the current bedtime is " + bedtimeSelected);
 			int start = LocalTime.parse(startTimeSelected, formatAmPm).getHour();
 			int end = LocalTime.parse(endTimeSelected, formatAmPm).getHour();
 			int bed = LocalTime.parse(bedtimeSelected, formatAmPm).getHour();
 
 			BabysitterPayment paymentCalculator = new BabysitterPayment();
-			String jobDetails = "Start time: " + startTimeSelected + ". End time: " + endTimeSelected + ". Bedtime: "
-					+ bedtimeSelected;
-			String jobAmount = "Total payment for this job: $" + paymentCalculator.babysittingTotalPay(start, end, bed)
-					+ ".00";
+			String jobDetails = "Start time: " + startTimeSelected + ". End time: " + endTimeSelected + ". Bedtime: " + bedtimeSelected;
+			String jobAmount = "Total payment for this job: $" + paymentCalculator.babysittingTotalPay(start, end, bed) + ".00";
 
 			model.addAttribute("jobDetails", jobDetails);
 			model.addAttribute("jobAmount", jobAmount);

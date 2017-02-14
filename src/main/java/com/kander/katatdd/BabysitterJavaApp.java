@@ -3,7 +3,6 @@ package com.kander.katatdd;
 import java.time.LocalTime;
 import java.util.Scanner;
 
-
 public class BabysitterJavaApp {
 
 	public static void main(String[] args) {
@@ -15,19 +14,16 @@ public class BabysitterJavaApp {
 		LocalTime jobStart;
 		LocalTime jobEnd;
 		LocalTime jobBed;
-		
+
 		BabysitterPayment paymentCalculator = new BabysitterPayment();
 
 		Scanner scan = new Scanner(System.in);
 
 		System.out.print("What time will the babysitting start?: ");
-//		start = scan.nextInt();
-		jobStart = LocalTime.parse(scan.next());		
+		jobStart = LocalTime.parse(scan.next());
 		System.out.print("What time will the babysitting end?: ");
-//		end = scan.nextInt();
 		jobEnd = LocalTime.parse(scan.next());
 		System.out.print("What time will the kids go to bed?: ");
-//		bed = scan.nextInt();
 		jobBed = LocalTime.parse(scan.next());
 		System.out.println("start time: " + jobStart + ", end time: " + jobEnd + ", bedtime: " + jobBed);
 		start = jobStart.getHour();
@@ -37,5 +33,4 @@ public class BabysitterJavaApp {
 
 		scan.close();
 	}
-
 }
