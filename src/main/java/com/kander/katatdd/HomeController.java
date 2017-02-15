@@ -32,8 +32,10 @@ public class HomeController {
 			int bed = LocalTime.parse(bedtimeSelected, formatAmPm).getHour();
 
 			BabysitterPayment paymentCalculator = new BabysitterPayment();
-			String jobDetails = "Start time: " + startTimeSelected + ". End time: " + endTimeSelected + ". Bedtime: " + bedtimeSelected;
-			String jobAmount = "Total payment for this job: $" + paymentCalculator.babysittingTotalPay(start, end, bed) + ".00";
+			String jobDetails = "Start time: " + startTimeSelected 
+							+ "<br>End time: " + endTimeSelected 
+							+ "<br>Bedtime: " + bedtimeSelected;		
+			String jobAmount = "Payment for this job: <strong>$" + paymentCalculator.babysittingTotalPay(start, end, bed) + ".00</strong>";
 
 			model.addAttribute("jobDetails", jobDetails);
 			model.addAttribute("jobAmount", jobAmount);
